@@ -32,3 +32,37 @@ class Login:
         log_btn.grid(row=3, column=0, columnspan=2, padx=(0, 110), pady=20)
         reset_btn.place(x=100, y=310)
         exit_btn.place(x=230, y=310)
+
+        # Password database
+        self.log_pass_list={}
+        file=open('users_database.txt', 'r')
+        for line in file:
+            line=line.strip() # removing \n (new line)
+            key, value=line.split(',', 1)
+            self.log_pass_list[key]=value
+        file.close()
+
+    def logging(self):
+        counter=0
+        for key, value in self.log_pass_list.items():
+            if self.user.get()==key and self.password.get()==value:
+                messagebox.showinfo('Info', f'Welcome, {self.user.get()}')
+                counter=1
+        if counter==0:
+            messagebox.showerror('Error', 'Invalid username or password')
+
+    def reset(self):
+        self.user.set('')
+        self.password.set('')
+
+    def exit(self):
+        option=messagebox.askyesno('Exit', 'Do you want to exit the system?')
+        if option==True:
+            root.destroy()
+        else:
+            return
+
+
+root=Tk()
+obj=Login(root=root)
+root.mainloop()

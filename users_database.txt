@@ -1,0 +1,5 @@
+Marek,haslomarka
+Julek,haslojulka
+Julka,haslojulki
+Serafinka,hasloserafinki
+Janek,haslojanka
