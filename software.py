@@ -7,10 +7,10 @@ import os
 class File_App:
     def __init__(self, root):
         self.root=root
-        self.root.title('File Based Record System')
+        self.root.title('Record System App')
         self.root.geometry('1350x700+0+0')
 
-        title=Label(self.root, text='File Based Record System', font=('Times New Roman', 35, 'bold'), bd=10, relief=GROOVE, pady=10)
+        title=Label(self.root, text='Record System App', font=('Times New Roman', 35, 'bold'), bd=10, relief=GROOVE, pady=10)
         title.pack(fill=X)
 
         frame_st=Frame(self.root, bd=10, relief=GROOVE)
